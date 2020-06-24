@@ -116,7 +116,8 @@ def shortest_path(source, target):
                 child = Node(person_id, node, movie_id)
 
                 # goalcheck
-                if node.state == target:
+                if child.state == target:
+                    node = child
                     path = []
                     while node.parent is not None:
                         path.append((node.action, node.state))
